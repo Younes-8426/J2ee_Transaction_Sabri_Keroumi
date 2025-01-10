@@ -7,6 +7,7 @@ import com.example.visa.model.TransactionStatus;
 import com.example.visa.repository.TransactionRepository;
 import com.example.visa.util.TransactionMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class TransactionService {
     private final TransactionRepository repository;
+    @Qualifier("transactionMapper")
     private final TransactionMapper mapper;
     private final ValidationService validationService;
 
